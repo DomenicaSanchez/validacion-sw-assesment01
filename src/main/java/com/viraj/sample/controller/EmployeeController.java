@@ -10,9 +10,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee/")
 public class EmployeeController {
-
+    private final EmployeeService employeeService;
     @Autowired
-    private EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @GetMapping(path = "/hello")
     public String getMessage() {
@@ -21,7 +23,6 @@ public class EmployeeController {
 
     @PostMapping("/save")
     public Employee saveEmployee(@RequestBody Employee employee) {
-
         return employeeService.saveEmployee(employee);
     }
 

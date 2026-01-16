@@ -52,4 +52,12 @@ public class Employee {
                 ", employeeDescription='" + employeeDescription + '\'' +
                 '}';
     }
+
+    public void setId(long l) {
+        this.employeeId = l;
+    }
+
+    public void setName(String string) {
+        this.employeeName = string;
+    }
 }
